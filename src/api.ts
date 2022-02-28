@@ -5,7 +5,9 @@ const URLS = {
   excuses: 'https://excuser.herokuapp.com/v1/excuse',
   facts: 'https://api.aakhilv.me/fun/facts',
   norris: 'https://api.chucknorris.io/jokes/random',
-  nerd: 'https://corporatebs-generator.sameerkumar.website/'
+  nerd: 'https://corporatebs-generator.sameerkumar.website/',
+  wouldYou: 'https://api.aakhilv.me/fun/wouldyourather',
+  puzzles: 'https://api.aakhilv.me/fun/puzzles',
 }
 
 
@@ -20,6 +22,14 @@ function parseResult(result: any, keyword?: string) {
   } else return result;
 }
 
+
+
+function parsePolls(text:string){
+  if(text && text.length){
+    const questions = text.split(' or ');
+    return questions;
+  } return text;
+}
 
 export async function getJoke() {
   const response = await axios.get(URLS.yomama);
@@ -53,4 +63,16 @@ export async function getNerd() {
   const response = await axios.get(URLS.nerd);
   // return response.data.phrase;
   return parseResult(response.data, "phrase");
+}
+
+
+export async function getWouldYou() {
+  const response = await axios.get(URLS.wouldYou);
+  return parsePolls(parseResult(response.data, "data")[0])
+}
+
+
+export async function getPuzzles() {
+  const response = await axios.get(URLS.puzzles);
+  return parseResult(response.data);
 }

@@ -1,6 +1,6 @@
 import { Context, Telegraf, Telegram } from 'telegraf';
 import { config } from 'dotenv';
-import { getExcuse, getFact, getJoke, getNerd, getNorris } from './api';
+import { getExcuse, getFact, getJoke, getNerd, getNorris, getPuzzles, getWouldYou } from './api';
 import ligma from './ligma.json';
 import { server } from './server';
 import { keepAlive } from './keep-alive'
@@ -30,6 +30,7 @@ Alrighty heres how i can work with you human shits
 /fact  get a random fact and learn a thing you ignorant peasant
 /norris  do you like Chuck Norris? me too!
 /nerd  get some nerdy words so you can show off to your nerd friends
+/would_you  create a poll to see what people want.
 
 Contact @MrGh0st for feedback. he's ma daddy.
 `
@@ -152,7 +153,19 @@ bot.command("norris", async ctx => {
 bot.command("nerd", async ctx => {
   const nerd = await getNerd();
   ctx.replyToSender(nerd)
-}).catch(e => console.log(e))
+}).catch(e => console.log(e));
+
+
+bot.command("/would_you", async ctx => {
+  const would:any = await getWouldYou();
+  ctx.replyWithPoll("Would You Rather", would);
+})
+
+bot.command("/puzzles", async ctx => {
+  const puzzle = await getPuzzles();
+  ctx.replyToSender(puzzle)
+})
+
 
 
 bot.launch().then(_ => console.log("Bot started")).catch(e => console.log(e))
@@ -166,10 +179,4 @@ bot.catch(async (err:any, ctx:any) => {
 server.listen(process.env.PORT, () => console.log("HTTP server started"))
 
 setInterval(async () => await keepAlive(), 5 * 60 * 1000)
-
-
-process.on('uncaughtException', (err) => {
-  console.log(err);
-  bot_.sendMessage(process.env.CREATOR_ID, JSON.stringify(err, null, 2));
-});
-
+ 
