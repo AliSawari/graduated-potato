@@ -1,4 +1,4 @@
-# graduated-potato ![Build](https://github.com/AliSawari/graduated-potato/actions/workflows/node.js.yml/badge.svg) ![Heroku](https://pyheroku-badge.herokuapp.com/?app=graduated-potato)
+# graduated-potato [![Build & Test](https://github.com/AliSawari/graduated-potato/actions/workflows/node.js.yml/badge.svg)](https://github.com/AliSawari/graduated-potato/actions/workflows/node.js.yml) ![Heroku](https://pyheroku-badge.herokuapp.com/?app=graduated-potato)
 
 
 
