@@ -1,4 +1,6 @@
-# graduated-potato
+# graduated-potato ![Build](https://github.com/AliSawari/graduated-potato/actions/workflows/node.js.yml/badge.svg) ![Heroku](https://pyheroku-badge.herokuapp.com/?app=graduated-potato)
+
+
 
 the source code for the Funny & Meme Master Telegram Bot [Graduated Potato Bot](https://t.me/graduated_potato_bot)
 
