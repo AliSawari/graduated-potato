@@ -20,7 +20,7 @@ const bot_ = new Telegram(process.env.BOT_TOKEN);
 
 
 const helpMessage = `
-Alrighty heres how i can work with you human shits
+Alrighty here's how I can work with you human shits
 
 /start  Starts this shit
 /help  Shows this shit
@@ -29,14 +29,15 @@ Alrighty heres how i can work with you human shits
 /excuse  find a good excuse to get rid of someone
 /fact  get a random fact and learn a thing you ignorant peasant
 /norris  do you like Chuck Norris? me too!
-/nerd  get some nerdy words so you can show off to your nerd friends
+/nerd  get some nerdy words to show off with
 /would_you  create a poll to see what people want.
 
-Contact @MrGh0st for feedback. he's ma daddy.
+here's my guts if you wanna know what's in there.
+https://github.com/AliSawari/graduated-potato
 `
 
 bot.start(async ctx => {
-  await ctx.reply('Why Hello there dear mama, how can I /help you?')
+  await ctx.reply('Why Hello there dear Mama, how can I /help you?')
 }).catch(e => console.log(e))
 
 bot.help(async ctx => {
