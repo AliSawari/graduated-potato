@@ -5,7 +5,7 @@ the source code for the Funny & Meme Master Telegram Bot [Graduated Potato Bot](
 
 ## Install & Run
 
-make sure you provide your own Bot token and Creator id in a separate `.env` file
+make sure you provide your own Bot token and Creator id in the `.env` file
 
 get your own bot token from [BotFather](https://t.me/BotFather)
 
