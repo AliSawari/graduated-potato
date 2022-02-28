@@ -11,7 +11,7 @@ const html = `
 </head>
 <body>
   <h1>
-    Im a Telegram bot you idiot!</h1>
+    I'm a Telegram bot you idiot!</h1>
     <p>here's the correct url: <a href="https://t.me/graduated_potato_bot">@graduated_potato_bot</a></p>
 </body>
 </html>
