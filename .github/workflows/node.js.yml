@@ -10,14 +10,11 @@ on:
     branches: [ master, dev ]
 
 jobs:
-  build:
-
+  install:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [16.x]
-        
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -26,5 +23,20 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm i
+  
+  build:
+    needs: [install]
+    steps:
     - run: npm run build
+
+  test:
+    needs: [build]
+    steps:
     - run: npm test
+
+  coverage:
+    needs: [test]
+    steps:
+    - name: Upload Coverage to CodeCov
+      uses: codecov/codecov-action@v1
+  
