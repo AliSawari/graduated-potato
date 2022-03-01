@@ -25,16 +25,19 @@ jobs:
     - run: npm i
   
   build:
+    runs-on: ubuntu-latest
     needs: [install]
     steps:
     - run: npm run build
 
   test:
+    runs-on: ubuntu-latest
     needs: [build]
     steps:
     - run: npm test
 
   coverage:
+    runs-on: ubuntu-latest
     needs: [test]
     steps:
     - name: Upload Coverage to CodeCov
