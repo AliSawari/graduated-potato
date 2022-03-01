@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "npm run build && node .",
     "dev": "nodemon src/bot.ts",
-    "test": "echo 'no test yet' "
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
