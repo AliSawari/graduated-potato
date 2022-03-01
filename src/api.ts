@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URLS = {
+export const URLS = {
   yomama: 'https://yomomma-api.herokuapp.com/jokes',
   excuses: 'https://excuser.herokuapp.com/v1/excuse',
   facts: 'https://api.aakhilv.me/fun/facts',
@@ -11,7 +11,7 @@ const URLS = {
 }
 
 
-function parseResult(result: any, keyword?: string) {
+export function parseResult(result: any, keyword?: string) {
   if (result.length) {
     result = result[0];
   }
@@ -24,7 +24,7 @@ function parseResult(result: any, keyword?: string) {
 
 
 
-function parsePolls(text:string){
+export function parsePolls(text:string){
   if(text && text.length){
     const questions = text.split(' or ');
     return questions;
