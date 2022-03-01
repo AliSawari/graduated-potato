@@ -2,10 +2,10 @@ name: Code Coverage
 
 on:
   workflow_run:
-    branches: [ master, dev ]
     workflows: ["Build & Test"]
     types:
       - completed
+
 
 jobs:
   build:
