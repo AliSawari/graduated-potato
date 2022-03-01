@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "npm run build && node .",
     "dev": "nodemon src/bot.ts",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
