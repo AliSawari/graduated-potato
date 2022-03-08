@@ -159,7 +159,9 @@ bot.command("nerd", async ctx => {
 
 bot.command("/would_you", async ctx => {
   const would:any = await getWouldYou();
-  ctx.replyWithPoll("Would You Rather", would);
+  ctx.replyWithPoll("Would You Rather", would, {
+    is_anonymous: false
+  });
 })
 
 bot.command("/puzzles", async ctx => {
