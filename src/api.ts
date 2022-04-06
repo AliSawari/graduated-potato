@@ -6,7 +6,7 @@ export const URLS = {
   facts: 'https://api.aakhilv.me/fun/facts',
   norris: 'https://api.chucknorris.io/jokes/random',
   nerd: 'https://corporatebs-generator.sameerkumar.website/',
-  wouldYou: 'https://api.aakhilv.me/fun/wouldyourather',
+  wouldYou: 'https://api.aakhilv.me/fun/wyr',
   puzzles: 'https://api.aakhilv.me/fun/puzzles',
 }
 
@@ -15,11 +15,12 @@ export function parseResult(result: any, keyword?: string) {
   if (result.length) {
     result = result[0];
   }
+  if(result.length) return result;
   if (result && Object.keys(result).length) {
     if (keyword) return result[keyword];
     const [mine] = Object.keys(result);
     return result[mine];
-  } else return result;
+  }
 }
 
 
@@ -48,7 +49,7 @@ export async function getExcuse() {
 export async function getFact() {
   const response = await axios.get(URLS.facts);
   // return response.data.data[0];
-  return parseResult(response.data, "data")[0];
+  return parseResult(response.data);
 }
 
 
@@ -68,7 +69,7 @@ export async function getNerd() {
 
 export async function getWouldYou() {
   const response = await axios.get(URLS.wouldYou);
-  return parsePolls(parseResult(response.data, "data")[0])
+  return parsePolls(parseResult(response.data))
 }
 
 
